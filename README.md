@@ -8,8 +8,6 @@ Project 1: Testing the various properties related to caching and memory hierarch
 ### Execution
 I accessed data from progressively larger arrays (representing different levels of the cache hierarchy). Smaller arrays fit within the L1 cache, and read/write operations were extremely fast. Larger arrays (e.g., 1MB, 10MB) progressively moved data to the L2, L3 cache, and ultimately to main memory, which resulted in increased latency. Read and write latencies were measured for each case to show how memory access times increase as data size surpasses cache capacity.
 
-### Analysis
-
 ### Results
 Reads/writes within the L1 cache were very fast (in nanoseconds), but latency increased as the array size exceeded L1 and L2 cache capacities. Also, as soon as the array size exceeded the total cache capacity, memory accesses were much slower due to main memory being accessed. Latency in main memory was significantly higher, reflecting the slower speed of DRAM compared to cache.
 
