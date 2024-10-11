@@ -1,7 +1,8 @@
 # Advanced-Computer-System-Projects
 
 ## Brief Description of Each Project:
-Project 1: Testing the various properties related to caching and memory hierarchy.
+Project 1: Cache and Memory Performance Profiling
+Project 2: Dense/Sparse Matrix-Matrix Multiplication
 
 ## Project 1 Experiment 1
 
