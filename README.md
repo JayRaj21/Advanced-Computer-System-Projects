@@ -61,3 +61,5 @@ The experiments demonstrated the critical role that cache and memory hierarchy p
 * ChatGPT
 * VSCode
 * Numpy
+* OpenMP
+* SIMD Intrinsincs (AVX)
