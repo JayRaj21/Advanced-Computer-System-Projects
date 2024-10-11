@@ -43,14 +43,18 @@ The program used arrays of different sizes and accessed memory using various str
 ### Results
 When using small strides, memory accesses were mostly contiguous, resulting in fewer TLB misses. Performance was good, as there was minimal TLB-related overhead. Also, as the stride size increased, TLB misses became more frequent, and execution time increased significantly. This is because accessing non-contiguous memory pages forced the CPU to perform more page table lookups, adding latency.
 
-## Conclusion
+## Project 1 Conclusion
 The experiments demonstrated the critical role that cache and memory hierarchy play in software performance. Caches significantly reduce memory latency for frequently accessed, small data sets, but as data size increases, both cache and TLB misses introduce considerable performance penalties. The trade-off between memory throughput and latency became evident, as increasing memory load led to queuing effects, where throughput eventually plateaued and latency grew due to memory contention. TLB and cache misses were found to have substantial impacts on performance, especially for large data sets or when memory access patterns were irregular. The experiments highlighted that optimizing for contiguous memory access, keeping working sets small enough to fit within cache, and balancing read/write operations to maximize memory bandwidth are all effective strategies for improving software performance. Overall, the findings underscore the importance of understanding memory hierarchy when designing high-performance applications, as minimizing memory-related overhead is crucial for efficiency in modern computing systems.
-
-
 
 ## Project 2
 
+### Execution
 
+
+### Results
+
+
+## Project 1 Conclusion
 
 
 ## Any resources used in the projects will be state below:
