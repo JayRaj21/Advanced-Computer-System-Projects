@@ -1,8 +1,8 @@
 # Advanced-Computer-System-Projects
 
 ## Brief Description of Each Project:
-<p> Project 1: Cache and Memory Performance Profiling
-Project 2: Dense/Sparse Matrix-Matrix Multiplication </p>
+<p>Project 1: Cache and Memory Performance Profiling</p>
+<p>Project 2: Dense/Sparse Matrix-Matrix Multiplication </p>
 
 ## Project 1 Experiment 1
 
