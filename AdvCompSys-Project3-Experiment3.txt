@@ -1,0 +1,12 @@
+[global]
+ioengine=libaio
+direct=1
+time_based
+runtime=60s
+size=1G
+bs=4k
+
+[random-write]
+rw=randwrite            # Random write
+iodepth=512             # Queue depth of 512
+filename=/dev/sdX

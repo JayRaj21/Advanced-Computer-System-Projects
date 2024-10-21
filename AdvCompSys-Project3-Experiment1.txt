@@ -1,0 +1,12 @@
+[global]
+ioengine=libaio         # Asynchronous I/O engine
+direct=1                # Bypass OS cache for direct I/O
+time_based              # Run tests for a fixed amount of time
+runtime=60s             # Duration of 60 seconds
+size=1G                 # Test data size (1GB)
+bs=4k                   # Block size (4KB)
+
+[random-read]
+rw=randread             # Random read
+iodepth=64              # Queue depth of 64
+filename=/dev/sdX       # Test partition (replace 'sdX' with the correct SSD partition)

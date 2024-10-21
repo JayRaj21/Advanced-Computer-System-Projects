@@ -1,0 +1,13 @@
+[global]
+ioengine=libaio
+direct=1
+time_based
+runtime=60s
+size=1G
+bs=4k
+
+[rw-test]
+rw=randrw               # Random read/write mix
+rwmixread=50            # 50% read, 50% write
+iodepth=128             # Queue depth of 128
+filename=/dev/sdX
