@@ -3,6 +3,7 @@
 ## Brief Description of Each Project:
 <p>Project 1: Cache and Memory Performance Profiling</p>
 <p>Project 2: Dense/Sparse Matrix-Matrix Multiplication </p>
+<p>Project 3: SSD Performance Profiling </p>
 
 ## Project 1 Experiment 1
 
@@ -65,6 +66,19 @@ When the optimization multi-threading, SIMD, and cache blocking are combined, th
 From the results of the matrix-matrix multiplication implementation, several key conclusions can be drawn about the impact of optimization techniques on performance. First, multi-threading is highly effective in reducing execution time for large matrices by distributing the workload across multiple CPU cores. However, the performance gains from multi-threading plateau as the number of threads approaches or exceeds the number of available physical cores, due to overhead and thread contention. SIMD optimization further accelerates the computation by enabling simultaneous processing of multiple data elements, making it particularly valuable for dense matrices. However, the benefit of SIMD diminishes for smaller matrices where setup costs outweigh the advantages. Cache blocking proves to be crucial in maintaining high performance for large matrices by improving cache utilization and reducing the penalty from cache misses, especially when the matrices are too large to fit in the CPU's cache.
 
 When combined, these three optimization techniques: multi-threading, SIMD, and cache blocking, provide the greatest overall performance boost. Their synergistic effect allows for efficient use of computational resources, minimizing bottlenecks related to memory access and maximizing throughput. These findings show the importance of considering both hardware capabilities (i.e core count and cache size) and data characteristics (i.e. size and sparsity) when optimizing algorithms for high-performance computing tasks.
+
+## Project 3
+Data Access Size: Smaller block sizes (e.g., 4KB) result in higher IOPS but lower throughput when measured in MB/s. Larger block sizes (e.g., 128KB) lead to lower IOPS but higher throughput in MB/s. This is because small blocks allow for a higher number of operations per second, while larger blocks transfer more data per operation. The experiment reveals that block size selection depends on the desired outcome—high operation rates or large data transfer.
+
+Read vs. Write Intensity Ratio: Write-heavy workloads (e.g., 100% write) tend to have lower throughput and higher latency compared to read-heavy workloads. This is because write operations generally take longer due to factors like wear-leveling in SSDs, where data blocks need to be erased before they are written. Read-heavy workloads (e.g., 100% read) have lower latency and higher throughput because reads are typically faster on SSDs. Mixed workloads (e.g., 50% read, 50% write) perform in between these two extremes, with the performance closely following the intensity ratio.
+
+I/O Queue Depth: As queue depth increases, throughput improves because the SSD can handle more simultaneous requests. However, latency also increases as requests begin to queue up, increasing the time it takes to process each individual request. This reflects the trade-off predicted by queuing theory: higher queue depths allow the system to achieve higher resource utilization but at the cost of longer individual access times. Low queue depths result in lower latency but reduced throughput, while higher queue depths lead to higher throughput with increased latency.
+
+Throughput vs. Latency Trade-Of: The trade-off between throughput and latency becomes evident when queue depth and access size are varied. As workload stress increases (e.g., by raising queue depth or using larger data sizes), SSDs maximize their throughput, but latency increases. This experiment confirms that higher throughput comes with the cost of slower individual request times. The SSD becomes more efficient at handling bulk data but takes longer to complete each operation, particularly as queue depth grows.
+
+Client vs. Enterprise SSD Performance: Consumer-grade SSDs may outperform enterprise-grade SSDs in burst performance, especially when testing with small block sizes and lower queue depths. However, enterprise-grade SSDs are designed for sustained workloads, often showing more consistent performance under heavy, continuous load, and may have better endurance over time. If your client-grade SSD exhibits higher IOPS than the Intel D7-P5600 in some cases, it may be optimized for peak short-term performance but may not be able to sustain this performance over long periods, unlike enterprise-grade SSDs.
+
+Overall Conclusion: Through these experiments, it becomes clear that SSD performance depends heavily on workload characteristics such as data access size, read/write intensity, and queue depth. Consumer SSDs can excel in burst performance, while enterprise SSDs focus on sustained efficiency and endurance. The trade-off between throughput and latency is also evident, as increasing queue depths lead to higher resource utilization but come at the cost of slower request completion times. Understanding these performance dynamics is crucial for selecting the right SSD and optimizing performance in different scenarios.
 
 ## Any resources used in the projects will be state below:
 * ChatGPT
